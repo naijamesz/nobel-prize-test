@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nobel Prize Winners</title>
+</head>
+<body>
+  <h1>Nobel Prize Winners in <%= year %></h1>
+  <select id="year">
+    <% for (const year of data.years) { %>
+      <option value="<%= year %>" <%= year === selectedYear ? 'selected' : '' %>><%= year %></option>
+    <% } %>
+  </select>
+  <ul>
+    <% for (const laureate of data.laureates) { %>
+      <li>
+        <h2><%= laureate.name %></h2>
+        <p><%= laureate.prize.category %></p>
+      </li>
+    <% } %>
+  </ul>
+</body>
+</html>
